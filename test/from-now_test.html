@@ -8,7 +8,7 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../from-now.html">
+    <script type="module" src="../from-now.js"></script>
   </head>
   <body>
 
@@ -18,15 +18,16 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('from-now', function() {
+    <script type="module">
+import '../from-now.js';
+suite('from-now', function() {
 
-        test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'from-now');
-        });
+  test('instantiating the element works', function() {
+    var element = fixture('basic');
+    assert.equal(element.is, 'from-now');
+  });
 
-      });
-    </script>
+});
+</script>
   </body>
 </html>
